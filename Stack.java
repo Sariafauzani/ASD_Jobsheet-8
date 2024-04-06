@@ -51,6 +51,7 @@ public class Stack {
     }
 
     public void print(){
+        System.out.println();
         System.out.println("Isi stack: ");
         for(int i = top; i >= 0; i--){
             System.out.println(data[i].jenis+ " " + data[i].warna + " " + data[i].merk
@@ -67,6 +68,21 @@ public class Stack {
             System.out.println("Stack sudah dikosongkan");
         } else {
             System.out.println("Stack masih kosong");
+        }
+    }
+
+    public Pakaian26 getMax(){
+        if (!isEmpty()){
+            Pakaian26 maxPakaian = data[0];
+            for (int i = 1; i <= top; i++){
+                if (data[i].harga > maxPakaian.harga){
+                    maxPakaian = data[i];
+                }
+            }
+            return maxPakaian;
+        } else {
+            System.out.println("Stack masih kosong");
+            return null;
         }
     }
 }

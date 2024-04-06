@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class StackMain {
     public static void main(String[] args) {
         Stack stk = new Stack(5);
@@ -39,6 +40,13 @@ public class StackMain {
                     stk.peek();
                     break;
                 case 4:
+                    Pakaian26 maxPakaian = stk.getMax();
+                        if (maxPakaian != null) {
+                            System.out.println();
+                            System.out.println("Pakaian dengan harga tertinggi:");
+                            System.out.println(maxPakaian.jenis + " " + maxPakaian.warna + " " + maxPakaian.merk +
+                            " " + maxPakaian.ukuran + " " + maxPakaian.harga);
+                        }
                     stk.print();
                     break;
                 default:
@@ -49,6 +57,7 @@ public class StackMain {
             pilih = sc26.nextLine().charAt(0);
         } while (pilih == 'y' || pilih == 'Y');
 
+        
         sc26.close();
     }
 }
